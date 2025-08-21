@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+* *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #015100;
+  --secondary-color: #df91d0;
+  --ultra-light:#fefefd;
+  --next: #ffffb0
+}
+
+body {
+  font-family: "Lucida Console", monospace;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  background-color: var(--primary-color);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-container {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  max-width: 40px;
+  margin: 20px;
+}
+
+#input {
+  all: unset;
+  line-height: 1.5;
+  background-color: var(--ultra-light);
+  text-shadow: 1px 1px 0 var(--ultra-light);
+  border: solid var(--secondary-color) 2px;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 5px 5px 0px black;
+  margin: 50px 0 20px 0;
+  max-width: 400px;
+  transition: 
+    transform 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+#input::placeholder {
+  line-height: 1.5;
+  padding: 5px 0px;
+}
+
+#input:focus::placeholder {
+  color: transparent;
+  text-shadow: none;
+}
+
+#input:focus {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  margin: 52px 0 22px 0;
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.list-container {
+  display: flex;
+  justify-content: center;
+}
+
+#tasks-list {
+  list-style: none;
+  width: 84vw;
+  max-width: 400Px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+li {
+  border-radius: 4px;
+  box-shadow: 3px 3px 0 black;
+  background-color: var(--secondary-color);
+  color: var(--ultra-light);
+  text-shadow: .5px .5px 0 var(--primary-color);
+  font-size: 1.7rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5%;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+  transition: filter 0.1s ease;
+}
+
+li div {
+  width: 100%;
+  max-width: 300px;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.done {
+  background-color: #f8d9faff;
+  transform: scale(0.95);
+  filter: blur(0.9px);
+}
+
+.done div {
+  color: grey;
+/*  text-decoration: line-through; */
+}
+
+button {
+  all: unset;
+  border-radius: 4px;
+  height: 100%;
+  background-color: var(--ultra-light);
+  color: var(--secondary-color);
+  font-size: 1rem;
+  cursor: pointer;
+}
