@@ -29,6 +29,7 @@ body {
 #input {
   all: unset;
   height: 63px;
+  width: 80vw;
   resize: none;
   box-shadow: 7px 7px 8px black;
   border-radius: 70px;
@@ -36,7 +37,7 @@ body {
   background-color: var(--ultra-light);
   line-height: 1.5;
   text-shadow: 1px 1px 0 var(--ultra-light);
-  font-size: 2.2rem;
+  font-size: 190%;
   font-weight: bold;
   padding: 20px;
   text-align: center;
@@ -50,7 +51,7 @@ body {
 
 #input::placeholder {
   line-height: 1.5;
-  padding: 5px 0px;
+  padding: 12px 0px;
 }
 
 #input:focus::placeholder {
@@ -66,6 +67,29 @@ body {
   background-color: transparent;
   border-color: transparent;
   box-shadow: none;
+}
+
+#hint {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(50px);
+  background: var(--ultra-light);
+  color: var(--primary-color);
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.5s ease;
+  z-index: 9999;
+}
+
+#hint.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 #tasks-list {
@@ -113,7 +137,7 @@ li:hover {
   box-shadow: none;
 }
 
-button {
+.btn-delete {
   all: unset;
   border-radius: 5px;
   padding: 5px;
@@ -123,13 +147,13 @@ button {
   font-size: 1rem;
 }
 
-button svg {
+.btn-delete svg {
   width: 30px;
   height: 6vw;
   max-height: 1.7rem;
 }
 
-button:hover {
+.btn-delete:hover {
   cursor: pointer;
   background-color: var(--ultra-light);
   color: var(--secondary-color);
