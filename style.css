@@ -28,8 +28,9 @@ body {
 
 #input {
   all: unset;
-  height: 63px;
+  height: 91px;
   width: 80vw;
+  max-width: 500px;
   resize: none;
   box-shadow: 7px 7px 8px black;
   border-radius: 70px;
@@ -39,9 +40,9 @@ body {
   text-shadow: 1px 1px 0 var(--ultra-light);
   font-size: 190%;
   font-weight: bold;
-  padding: 20px;
   text-align: center;
-  margin: 50px 0 20px 0;
+  padding-top: 24px;
+  margin: 40px 0 20px 0;
   transition: 
     transform 0.15s ease,
     background-color 0.15s ease,
@@ -51,7 +52,7 @@ body {
 
 #input::placeholder {
   line-height: 1.5;
-  padding: 12px 0px;
+  padding-top: 12px;
 }
 
 #input:focus::placeholder {
@@ -63,10 +64,7 @@ body {
   background-color: transparent;
   border: none;
   box-shadow: none;
-  margin: 52px 0 22px 0;
-  background-color: transparent;
-  border-color: transparent;
-  box-shadow: none;
+  margin: 42px 0 22px 0;
 }
 
 #hint {
@@ -108,20 +106,25 @@ li {
   box-shadow: 5px 5px 5px black;
   background-color: var(--secondary-color);
   color: var(--ultra-light);
-  overflow:visible;
+  overflow: visible;
   text-shadow: .5px .5px 0 var(--primary-color);
   font-size: 1.7rem;
   font-weight: bold;
-  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: .7rem;
+  padding: 1rem 3px 1rem 3px;
   margin-bottom: 5%;
   transition:
     transform 0.1s ease,
     filter 0.1s ease,
     background-color 0.5s ease,
     color 0.01s ease;
+}
+
+li span {
+  flex: 1;
 }
 
 li:hover {
@@ -137,14 +140,19 @@ li:hover {
   box-shadow: none;
 }
 
+.done svg {
+  color: var(--primary-color);
+}
+
 .btn-delete {
   all: unset;
   border-radius: 5px;
-  padding: 5px;
-  height: 100%;
   background-color: transparent;
-  color: var(--primary-color);
-  font-size: 1rem;
+  color: var(--ultra-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
 }
 
 .btn-delete svg {
@@ -154,6 +162,29 @@ li:hover {
 }
 
 .btn-delete:hover {
+  cursor: pointer;
+  background-color: var(--ultra-light);
+  color: var(--secondary-color);
+}
+
+.btn-edit {
+  all: unset;
+  border-radius: 5px;
+  background-color: transparent;
+  color: var(--ultra-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px; 
+}
+
+.btn-edit svg {
+  width: 30px;
+  height: 6vw;
+  max-height: 1.7rem;
+}
+
+.btn-edit:hover {
   cursor: pointer;
   background-color: var(--ultra-light);
   color: var(--secondary-color);
