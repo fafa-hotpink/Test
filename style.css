@@ -28,17 +28,18 @@ body {
 
 #input {
   all: unset;
-  width: auto;
-  line-height: 1.5;
-  background-color: var(--ultra-light);
-  text-shadow: 1px 1px 0 var(--ultra-light);
+  height: 63px;
+  resize: none;
+  box-shadow: 7px 7px 8px black;
+  border-radius: 70px;
   border: solid var(--secondary-color) 2px;
-  font-size: 2rem;
+  background-color: var(--ultra-light);
+  line-height: 1.5;
+  text-shadow: 1px 1px 0 var(--ultra-light);
+  font-size: 2.2rem;
   font-weight: bold;
   padding: 20px;
-  border-radius: 50px;
   text-align: center;
-  box-shadow: 5px 5px 0px black;
   margin: 50px 0 20px 0;
   transition: 
     transform 0.15s ease,
@@ -80,7 +81,7 @@ body {
 li {
   width: auto;
   border-radius: 5px;
-  box-shadow: 4px 4px 0 black;
+  box-shadow: 5px 5px 5px black;
   background-color: var(--secondary-color);
   color: var(--ultra-light);
   overflow:visible;
