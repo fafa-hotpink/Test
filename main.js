@@ -26,7 +26,7 @@ input.addEventListener('keydown', e => {
     }
     
     if (tasksList.some(t => t.text.toLowerCase() === taskText.toLowerCase())) {
-    showHint('Das gibts schon, Freundchen.');
+    showHint('Den Eintrag gibts schon, Freundchen...');
     return;
     }
     
@@ -109,6 +109,7 @@ function addListItem(taskObj) {
     
     buttonEdit.addEventListener('click', e => {
       e.stopPropagation();
+      
 
       const edit = document.createElement('input');
       edit.type = 'text';
@@ -116,17 +117,34 @@ function addListItem(taskObj) {
       li.insertBefore(edit, span);
       li.removeChild(span);
       edit.focus();
+      
+      edit.addEventListener('click', ev => {
+        ev.stopPropagation();
+      })
 
       function saveEdit() {
         const newText = edit.value.trim();
-        if (newText) taskObj.text = newText;
-        span.textContent = newText;
-
-        if (li.contains(edit)) {
+        if (newText === taskObj.text) {
           li.insertBefore(span, edit);
           li.removeChild(edit);
+          return;
         }
-
+        if (!newText) {
+          showHint('Na hör mal...')
+          li.insertBefore(span, edit);
+          li.removeChild(edit);
+          return;
+        }
+        if (tasksList.some(nt => nt.text.toLowerCase() === newText.toLowerCase())) {
+          showHint('Jetzt schlägts aber 13...');
+          li.insertBefore(span, edit);
+          li.removeChild(edit);
+          return;
+        }
+        taskObj.text = newText;
+        span.textContent = newText;
+        li.insertBefore(span, edit);
+        li.removeChild(edit);
         saveTasks();
       }
       edit.addEventListener('blur', saveEdit);

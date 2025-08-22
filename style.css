@@ -28,8 +28,8 @@ body {
 
 #input {
   all: unset;
-  height: 91px;
-  width: 80vw;
+  height: 63px;
+  width: 85vw;
   max-width: 500px;
   resize: none;
   box-shadow: 7px 7px 8px black;
@@ -52,7 +52,7 @@ body {
 
 #input::placeholder {
   line-height: 1.5;
-  padding-top: 12px;
+  padding-top: 0px;
 }
 
 #input:focus::placeholder {
@@ -61,6 +61,7 @@ body {
 }
 
 #input:focus {
+  top: 42px;
   background-color: transparent;
   border: none;
   box-shadow: none;
@@ -69,9 +70,9 @@ body {
 
 #hint {
   position: fixed;
-  bottom: 20px;
+  top: 20px;
   left: 50%;
-  transform: translateX(-50%) translateY(50px);
+  transform: translateX(-50%) translateY(-50px);
   background: var(--ultra-light);
   color: var(--primary-color);
   padding: 12px 18px;
@@ -108,7 +109,7 @@ li {
   color: var(--ultra-light);
   overflow: visible;
   text-shadow: .5px .5px 0 var(--primary-color);
-  font-size: 1.7rem;
+  font-size: 1.25rem;
   font-weight: bold;
   display: flex;
   justify-content: space-between;
@@ -125,6 +126,7 @@ li {
 
 li span {
   flex: 1;
+  text-align: center;
 }
 
 li:hover {
@@ -144,29 +146,6 @@ li:hover {
   color: var(--primary-color);
 }
 
-.btn-delete {
-  all: unset;
-  border-radius: 5px;
-  background-color: transparent;
-  color: var(--ultra-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px;
-}
-
-.btn-delete svg {
-  width: 30px;
-  height: 6vw;
-  max-height: 1.7rem;
-}
-
-.btn-delete:hover {
-  cursor: pointer;
-  background-color: var(--ultra-light);
-  color: var(--secondary-color);
-}
-
 .btn-edit {
   all: unset;
   border-radius: 5px;
@@ -180,7 +159,7 @@ li:hover {
 
 .btn-edit svg {
   width: 30px;
-  height: 6vw;
+  height: 5vw;
   max-height: 1.7rem;
 }
 
@@ -188,4 +167,32 @@ li:hover {
   cursor: pointer;
   background-color: var(--ultra-light);
   color: var(--secondary-color);
+}
+
+.btn-delete {
+  all: unset;
+  border-radius: 5px;
+  background-color: transparent;
+  color: var(--ultra-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.btn-delete svg {
+  width: 30px;
+  height: 5vw;
+  max-height: 1.7rem;
+}
+
+.btn-delete:hover {
+  cursor: pointer;
+  background-color: var(--ultra-light);
+  color: var(--secondary-color);
+}
+
+li input {
+  all: unset;
+  width: 100%;
 }
